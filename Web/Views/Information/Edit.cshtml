@@ -1,0 +1,18 @@
+﻿@model BL.DTO.StudentDTO
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.EditorFor(model => model.FirstName)
+    </div>
+
+    <div>
+        @Html.EditorFor(model => model.Surname)
+    </div>
+
+    <div>
+        @Html.EditorFor(model => model.Email)
+    </div>
+
+    <input type="submit" value="Change" />
+}
