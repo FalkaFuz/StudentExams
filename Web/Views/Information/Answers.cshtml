@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BL.DTO.AnswerDTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Questions</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateAnswer")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsRight)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsRight)
+            </td>
+            
+
+            <td>
+                @Html.ActionLink("Edit", "EditAnswer", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "DeleteAnswer", new { id = item.Id })
+            </td>
+           
+
+        </tr>
+    }
+
+</table>

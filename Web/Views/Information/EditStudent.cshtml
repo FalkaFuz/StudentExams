@@ -2,16 +2,23 @@
 
 @using (Html.BeginForm())
 {
+    @Html.AntiForgeryToken()
     <div>
         @Html.EditorFor(model => model.FirstName)
+        @Html.ValidationMessageFor(model => model.FirstName)
     </div>
 
     <div>
         @Html.EditorFor(model => model.Surname)
+        @Html.ValidationMessageFor(model => model.Surname)
     </div>
 
     <div>
         @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.Password)
     </div>
 
     <input type="submit" value="Change" />

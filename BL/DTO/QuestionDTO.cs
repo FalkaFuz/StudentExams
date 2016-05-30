@@ -1,4 +1,5 @@
-﻿using StudentExams.Entities;
+﻿using DAL.Entities;
+using StudentExams.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,8 @@ namespace BL.DTO
         public string Text { set; get; }
          public int Points { set; get; }
         public string Explanation { set; get; }
-        public QuestionType QuestionType { set; get; }
+        public IList<AnswerDTO> Answers { set; get; }
+        public int RightAnswers { get; set; }
         public ThematicArea ThematicArea { set; get; }
     }
 }

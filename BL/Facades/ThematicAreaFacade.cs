@@ -84,5 +84,17 @@ namespace BL.Facades
                     .ToList();
             }
         }
+
+        public List<QuestionDTO> GetAllQuestions(ThematicAreaDTO area)
+        {
+            using (var context = new AppDbContext())
+            {
+
+                var questions = area.Questions;
+                return questions
+                    .Select(e => Mapping.Mapper.Map<QuestionDTO>(e))
+                    .ToList();
+            }
+        }
     }
 }

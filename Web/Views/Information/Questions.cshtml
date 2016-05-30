@@ -1,0 +1,60 @@
+﻿@model IEnumerable<BL.DTO.QuestionDTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Questions</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateQuestion")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Points)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RightAnswers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Explanation)
+        </th>
+        
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Points)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RightAnswers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Explanation)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "EditQuestion", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "DeleteQuestion", new { id = item.Id })
+            </td>
+        <br/>
+            <td>
+                @Html.ActionLink("Answers", "Answers", "Information")
+            </td>
+        
+
+        </tr>
+    }
+
+</table>

@@ -3,6 +3,14 @@
 <script src="~/Scripts/jquery-1.10.2.js"></script>
 
 <h1>Welcome!</h1>
+<div>
+    @if (User.IsInRole("Teacher"))
+    {
+        <div>
+            You are using teacher account.
+        </div>
+    }
+</div>
 <td>This is a system for testing students.</td>
 
 <br />
@@ -10,8 +18,29 @@
 <br />
 
 <p>
-    <h2>Students data</h2>
+    <h2>Students</h2>
     <td>Please click @Html.ActionLink("HERE", "Students", "Information") to see and manipulate students data.</td>
+</p>
+
+<br />
+
+<p>
+    <h2>Answers</h2>
+    <td>Please click @Html.ActionLink("HERE", "Answers", "Information") to see and manipulate students data.</td>
+</p>
+
+<br />
+
+<p>
+    <h2>Thematic Areas</h2>
+    <td>Please click @Html.ActionLink("HERE", "Index", "ThematicArea") to see and manipulate students data.</td>
+</p>
+
+<br />
+
+<p>
+    <h2>Questions</h2>
+    <td>Please click @Html.ActionLink("HERE", "Questions", "Information") to see and manipulate students data.</td>
 </p>
 
 <br />

@@ -199,15 +199,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\ThematicAreaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Extensions.cs" />
-    <Compile Include="Migrations\201605091517167_Should do something.cs" />
-    <Compile Include="Migrations\201605091517167_Should do something.Designer.cs">
-      <DependentUpon>201605091517167_Should do something.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -274,13 +271,32 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Information\Create.cshtml" />
+    <Content Include="Views\Information\CreateStudent.cshtml" />
     <Content Include="Views\Information\Students.cshtml" />
-    <Content Include="Views\Information\Edit.cshtml" />
+    <Content Include="Views\Information\EditStudent.cshtml" />
     <Content Include="Views\Information\Index.cshtml" />
+    <Content Include="Views\Information\Questions.cshtml" />
+    <Content Include="Views\Information\CreateQuestion.cshtml" />
+    <Content Include="Views\Information\ThematicAreas.cshtml" />
+    <Content Include="Views\Information\CreateThematicArea.cshtml" />
+    <Content Include="Views\Information\EditQuestion.cshtml" />
+    <Content Include="Views\Information\Answers.cshtml" />
+    <Content Include="Views\Information\CreateAnswer.cshtml" />
+    <Content Include="Views\Information\EditAnswer.cshtml" />
+    <Content Include="Views\ThematicArea\Create.cshtml" />
+    <Content Include="Views\ThematicArea\Delete.cshtml" />
+    <Content Include="Views\ThematicArea\Details.cshtml" />
+    <Content Include="Views\ThematicArea\Edit.cshtml" />
+    <Content Include="Views\ThematicArea\Index.cshtml" />
+    <Content Include="Views\Question\Create.cshtml" />
+    <Content Include="Views\Question\Delete.cshtml" />
+    <Content Include="Views\Question\Details.cshtml" />
+    <Content Include="Views\Question\Edit.cshtml" />
+    <Content Include="Views\Question\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Answers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -295,11 +311,6 @@
       <Project>{50682c8d-50f1-4f4e-98a4-7bb1cfd63b62}</Project>
       <Name>BL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605091517167_Should do something.resx">
-      <DependentUpon>201605091517167_Should do something.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

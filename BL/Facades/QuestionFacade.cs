@@ -84,5 +84,17 @@ namespace BL.Facades
                     .ToList();
             }
         }
+
+        public List<AnswerDTO> GetAllAnswers(QuestionDTO question)
+        {
+            using (var context = new AppDbContext())
+            {
+                
+                var answers = question.Answers;
+                return answers
+                    .Select(e => Mapping.Mapper.Map<AnswerDTO>(e))
+                    .ToList();
+            }
+        }
     }
 }

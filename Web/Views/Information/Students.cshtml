@@ -1,21 +1,15 @@
-﻿@model IEnumerable<BL.DTO.StudentDTO>
+﻿@model IEnumerable<BL.DTO.UserDTO>
 
 @{
-    ViewBag.Title = "Students";
+    ViewBag.Title = "Index";
 }
 
 <h2>Students</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Surname)
+            @Html.DisplayNameFor(model => model.UserName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Email)
@@ -27,18 +21,15 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Surname)
+                @Html.DisplayFor(modelItem => item.UserName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
           
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Edit", "EditStudent", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "DeleteStudent", new { id = item.Id })
             </td>
         </tr>
     }

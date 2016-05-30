@@ -12,5 +12,8 @@ namespace BL.DTO
         public string FirstName { set; get; }
         public string Surname { set; get; }
         public string Email { set; get; }
+
+        public string Login { get; set; }
+        public string Password { get; set; }
     }
 }

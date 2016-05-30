@@ -1,0 +1,13 @@
+﻿@model BL.DTO.ThematicAreaDTO
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+    </div>
+   
+
+
+    <input type="submit" value="Create" />
+}

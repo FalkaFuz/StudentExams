@@ -15,7 +15,6 @@ namespace StudentExams.Entities
         }
         [Key]
         public int Id { set; get; }
-        [Required]
         public string Name { set; get; }
         public IList<Question> Questions { set; get; }
 

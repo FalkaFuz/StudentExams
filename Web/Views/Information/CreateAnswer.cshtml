@@ -1,0 +1,16 @@
+﻿@model BL.DTO.AnswerDTO
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(model => model.Text)
+        @Html.EditorFor(model => model.Text)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.IsRight)
+        @Html.EditorFor(model => model.IsRight)
+    </div>
+
+
+    <input type="submit" value="Create" />
+}

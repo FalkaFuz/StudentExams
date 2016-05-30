@@ -1,0 +1,27 @@
+﻿@model BL.DTO.QuestionDTO
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div>
+        @Html.ValidationMessageFor(model => model.Text)
+        @Html.EditorFor(model => model.Text)
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.Points)
+        @Html.EditorFor(model => model.Points)
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.RightAnswers)
+        @Html.EditorFor(model => model.RightAnswers)
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.Explanation)
+        @Html.EditorFor(model => model.Explanation)
+    </div>
+    
+
+    <input type="submit" value="Change" />
+}

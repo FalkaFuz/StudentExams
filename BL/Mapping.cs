@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using BL.DTO;
 using StudentExams.Entities;
+using DAL.IdentityEntities;
+using DAL.Entities;
 
 namespace BL
 {
@@ -22,6 +24,9 @@ namespace BL
                 c.CreateMap<TestDTO, Test>().ReverseMap();
                 c.CreateMap<TestAccessDTO, TestAccess>().ReverseMap();
                 c.CreateMap<QuestionDTO, Question>().ReverseMap();
+                c.CreateMap<UserDTO, AppUser>().ReverseMap();
+                c.CreateMap<AnswerDTO, Answer>().ReverseMap();
+                c.CreateMap<ThematicAreaDTO, ThematicArea>().ReverseMap();
 
             });
             Mapper = config.CreateMapper();

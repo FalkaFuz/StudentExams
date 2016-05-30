@@ -6,9 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Microsoft.AspNet.Identity.EntityFramework;
+using DAL.IdentityEntities;
+using DAL.Entities;
+
 namespace DAL
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser, AppRole, int, AppUserLogin, AppUserRole, AppUserClaim>
     {
         public AppDbContext() : base("StudentExams")
         {
@@ -23,6 +27,7 @@ namespace DAL
         public DbSet<Test> Tests { set; get; }
         public DbSet<TestAccess> TestAccesses { set; get; }
         public DbSet<ThematicArea> ThematicAreas { set; get; }
+        public DbSet<Answer> Answers { set; get; }
 
     }
 }

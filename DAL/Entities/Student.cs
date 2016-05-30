@@ -17,5 +17,7 @@ namespace StudentExams.Entities
         public string Surname { set; get; }
         [Required]
         public string Email { set; get; }
+        public string Login { get; set; }
+        public string Password { get; set; }
     }
 }

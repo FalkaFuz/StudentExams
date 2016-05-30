@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace BL.DTO
 {
-    public class ThematicAreaDTO
+    public class AnswerDTO
     {
         public int Id { set; get; }
-        public string Name { set; get; }
-        public IList<QuestionDTO> Questions { set; get; }
+        public string Text { set; get; }
+        public Boolean IsRight { set; get; }
+
     }
 }

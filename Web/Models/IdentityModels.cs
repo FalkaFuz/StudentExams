@@ -29,5 +29,9 @@ namespace Web.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<BL.DTO.ThematicAreaDTO> ThematicAreaDTOes { get; set; }
+
+        public System.Data.Entity.DbSet<BL.DTO.QuestionDTO> QuestionDTOes { get; set; }
     }
 }
