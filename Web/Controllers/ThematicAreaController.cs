@@ -118,5 +118,10 @@ namespace Web.Controllers
         {
             return RedirectToAction("ListByArea", "Question", new { id = id });
         }
+
+        public ActionResult BackToProject()
+        {
+            return RedirectToAction("Index", "Information");
+        }
     }
 }

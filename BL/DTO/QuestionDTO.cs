@@ -15,7 +15,6 @@ namespace BL.DTO
          public int Points { set; get; }
         public string Explanation { set; get; }
         public IList<AnswerDTO> Answers { set; get; }
-        public int RightAnswers { get; set; }
-        public ThematicArea ThematicArea { set; get; }
+        public ThematicAreaDTO ThematicArea { set; get; }
     }
 }

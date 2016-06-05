@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentExams.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace DAL.Entities
         public string Text { set; get; }
         [Required]
         public Boolean IsRight { set; get; }
+        [Required]
+        public virtual Question Question { set; get; }
 
     }
 }

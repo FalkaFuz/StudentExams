@@ -1,6 +1,7 @@
 ﻿using BL.DTO;
 using DAL;
 using DAL.Entities;
+using StudentExams.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -18,6 +19,8 @@ namespace BL.Facades
 
             using (var context = new AppDbContext())
             {
+                Question newQuestion = context.Questions.Find(answer.Question.Id);
+                newAnswer.Question = newQuestion;
                 context.Database.Log = Console.WriteLine;
                 context.Answers.Add(newAnswer);
                 context.SaveChanges();
@@ -29,7 +32,8 @@ namespace BL.Facades
             using (var context = new AppDbContext())
             {
                 context.Database.Log = Console.WriteLine;
-                var answer = context.Answers.Find(id);
+                //var answer = context.Answers.Find(id);
+                var answer = context.Answers.First(a => a.Id == id);
                 return Mapping.Mapper.Map<AnswerDTO>(answer);
             }
         }

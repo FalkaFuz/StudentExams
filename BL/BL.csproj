@@ -67,7 +67,6 @@
     <Compile Include="AppUserStore.cs" />
     <Compile Include="DTO\AnswerDTO.cs" />
     <Compile Include="DTO\QuestionDTO.cs" />
-    <Compile Include="DTO\QuestionTypeDTO.cs" />
     <Compile Include="DTO\StudentDTO.cs" />
     <Compile Include="DTO\StudentGroupDTO.cs" />
     <Compile Include="DTO\TeacherDTO.cs" />
@@ -77,7 +76,6 @@
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Facades\AnswerFacade.cs" />
     <Compile Include="Facades\QuestionFacade.cs" />
-    <Compile Include="Facades\QuestionTypeFacade.cs" />
     <Compile Include="Facades\StudentFacade.cs" />
     <Compile Include="Facades\StudentGroupFacade.cs" />
     <Compile Include="Facades\TeacherFacade.cs" />

@@ -29,7 +29,8 @@ namespace BL.Facades
             using (var context = new AppDbContext())
             {
                 context.Database.Log = Console.WriteLine;
-                var thematicArea = context.ThematicAreas.Find(id);
+                var thematicArea = context.ThematicAreas.Include(a => a.Questions).First(a => a.Id == id);
+                System.Diagnostics.Debug.WriteLine(thematicArea.Questions.Count);
                 return Mapping.Mapper.Map<ThematicAreaDTO>(thematicArea);
             }
         }
@@ -84,17 +85,8 @@ namespace BL.Facades
                     .ToList();
             }
         }
+        
 
-        public List<QuestionDTO> GetAllQuestions(ThematicAreaDTO area)
-        {
-            using (var context = new AppDbContext())
-            {
 
-                var questions = area.Questions;
-                return questions
-                    .Select(e => Mapping.Mapper.Map<QuestionDTO>(e))
-                    .ToList();
-            }
-        }
     }
 }

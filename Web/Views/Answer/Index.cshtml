@@ -1,0 +1,42 @@
+﻿@model Tuple<int, IEnumerable<BL.DTO.AnswerDTO>>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Answers</h2>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id = Model.Item1 })
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Text
+        </th>
+        <th>
+           IsRight
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Item2) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsRight)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+<p>
+    @Html.ActionLink("Back to question", "BackToQuestion", new { id = Model.Item1 })
+</p>

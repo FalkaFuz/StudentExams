@@ -18,31 +18,12 @@ namespace Web.Controllers
         private QuestionFacade facade = new QuestionFacade();
         private ThematicAreaFacade areaFacade = new ThematicAreaFacade();
 
-        // GET: Question
-        public ActionResult Index()
-        {
-            return View(facade.GetAllQuestions());
-        }
-
-        // GET: Question/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            QuestionDTO questionDTO = facade.GetQuestionById(id.Value);
-            if (questionDTO == null)
-            {
-                return HttpNotFound();
-            }
-            return View(questionDTO);
-        }
-
+        
         // GET: Question/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            return View();
+            QuestionDTO model = new QuestionDTO { ThematicArea = areaFacade.GetThematicAreaById(id) };
+            return View(model);
         }
 
         // POST: Question/Create
@@ -50,16 +31,18 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Text,Points,Explanation,RightAnswers")] QuestionDTO questionDTO)
+        public ActionResult Create([Bind(Include = "Id,Text,Points,Explanation,ThematicArea")] QuestionDTO questionDTO)
         {
             if (ModelState.IsValid)
             {
                 facade.CreateQuestion(questionDTO);
-                return RedirectToAction("Index");
+                return RedirectToAction("ListByArea", "Question", new { id = questionDTO.ThematicArea.Id });
             }
 
             return View(questionDTO);
         }
+
+       
 
         // GET: Question/Edit/5
         public ActionResult Edit(int? id)
@@ -81,12 +64,12 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Text,Points,Explanation,RightAnswers")] QuestionDTO questionDTO)
+        public ActionResult Edit([Bind(Include = "Id,Text,Points,Explanation,ThematicArea")] QuestionDTO questionDTO)
         {
             if (ModelState.IsValid)
             {
                 facade.UpdateQuestion(questionDTO);
-                return RedirectToAction("Index");
+                return RedirectToAction("ListByArea", "Question", new { id = questionDTO.ThematicArea.Id });
             }
             return View(questionDTO);
         }
@@ -111,20 +94,30 @@ namespace Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-
+            QuestionDTO questionDTO = facade.GetQuestionById(id);
             facade.DeleteQuestion(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("ListByArea", "Question", new { id = questionDTO.ThematicArea.Id});
         }
 
         public ActionResult ListByArea(int id) {
 
             var area = areaFacade.GetThematicAreaById(id);
-            var models = areaFacade.GetAllQuestions(area);
+            var models = area.Questions;
             if (models == null) {
                 models = new List<QuestionDTO>();
             }
-            return View("Index", models);
+            return View("Index", new Tuple<int, IEnumerable<QuestionDTO>>(id, models));
         }
 
+        public ActionResult Answers(int id)
+        {
+            return RedirectToAction("ListByQuestion", "Answer", new { id = id });
+        }
+
+        public ActionResult BackToThematicArea()
+        {
+            //ThematicAreaDTO ta = areaFacade.GetThematicAreaById(id);
+            return RedirectToAction("Index", "ThematicArea");
+        }
     }
 }

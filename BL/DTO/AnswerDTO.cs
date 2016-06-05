@@ -11,6 +11,6 @@ namespace BL.DTO
         public int Id { set; get; }
         public string Text { set; get; }
         public Boolean IsRight { set; get; }
-
+        public QuestionDTO Question { set; get; }
     }
 }

@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -275,28 +276,21 @@
     <Content Include="Views\Information\Students.cshtml" />
     <Content Include="Views\Information\EditStudent.cshtml" />
     <Content Include="Views\Information\Index.cshtml" />
-    <Content Include="Views\Information\Questions.cshtml" />
-    <Content Include="Views\Information\CreateQuestion.cshtml" />
-    <Content Include="Views\Information\ThematicAreas.cshtml" />
-    <Content Include="Views\Information\CreateThematicArea.cshtml" />
-    <Content Include="Views\Information\EditQuestion.cshtml" />
-    <Content Include="Views\Information\Answers.cshtml" />
-    <Content Include="Views\Information\CreateAnswer.cshtml" />
-    <Content Include="Views\Information\EditAnswer.cshtml" />
     <Content Include="Views\ThematicArea\Create.cshtml" />
     <Content Include="Views\ThematicArea\Delete.cshtml" />
-    <Content Include="Views\ThematicArea\Details.cshtml" />
     <Content Include="Views\ThematicArea\Edit.cshtml" />
     <Content Include="Views\ThematicArea\Index.cshtml" />
     <Content Include="Views\Question\Create.cshtml" />
     <Content Include="Views\Question\Delete.cshtml" />
-    <Content Include="Views\Question\Details.cshtml" />
     <Content Include="Views\Question\Edit.cshtml" />
     <Content Include="Views\Question\Index.cshtml" />
+    <Content Include="Views\Answer\Create.cshtml" />
+    <Content Include="Views\Answer\Delete.cshtml" />
+    <Content Include="Views\Answer\Edit.cshtml" />
+    <Content Include="Views\Answer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Answers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

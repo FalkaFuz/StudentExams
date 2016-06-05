@@ -55,12 +55,7 @@ namespace Web.Controllers
             
             return View();
         }
-
-        /* public ActionResult Students()
-         {
-             var model = studentFacade.GetAllStudents();
-             return View(model);
-         }*/
+        
         [HttpPost]
         public ActionResult CreateStudent(StudentDTO student)
         {
@@ -97,55 +92,7 @@ namespace Web.Controllers
 
             return RedirectToAction("Students");
         }
-        public ActionResult CreateQuestion()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult CreateQuestion(QuestionDTO question)
-        {
-            questionFacade.CreateQuestion(question);
-            return RedirectToAction("Questions");
-        }
-
-        public ActionResult EditQuestion(int id)
-        {
-            var question = questionFacade.GetQuestionById(id);
-            return View(question);
-        }
-
-        [HttpPost]
-        public ActionResult EditQuestion(int id, QuestionDTO question)
-        {
-            var originalQuestion = questionFacade.GetQuestionById(id);
-            originalQuestion.Text = question.Text;
-            originalQuestion.Points = question.Points;
-            originalQuestion.RightAnswers = question.RightAnswers;
-            originalQuestion.Explanation = question.Explanation;
-
-            questionFacade.UpdateQuestion(originalQuestion);
-
-            return RedirectToAction("Questions");
-        }
-
-        public ActionResult DeleteQuestion(int id)
-        {
-            questionFacade.DeleteQuestion(id);
-            return RedirectToAction("Questions");
-        }
-
-        public ActionResult CreateThematicArea()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult CreateThematicArea(ThematicAreaDTO area)
-        {
-            thematicAreaFacade.CreateThematicArea(area);
-            return RedirectToAction("ThematicAreas");
-        }
+       
     }
 
 }

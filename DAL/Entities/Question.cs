@@ -17,17 +17,15 @@ namespace StudentExams.Entities
         }
         [Key]
         public int Id { set; get; }
-        //[Required]
+        [Required]
         public string Text { set; get; }
-       // [Required]
+        [Required]
         public int Points { set; get; }
         public string Explanation { set; get; }
-        //[Required]
-        public IList<Answer> Answers { set; get; }
-        //[Required]
-        public int RightAnswers { get; set; }
-       // [Required]
-        public ThematicArea ThematicArea { set; get; }
+        [Required]
+        public virtual IList<Answer> Answers { set; get; }
+        [Required]
+        public virtual ThematicArea ThematicArea { set; get; }
         
 
 

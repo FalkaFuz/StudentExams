@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.EntityFramework;
 using DAL.IdentityEntities;
 using DAL.Entities;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace DAL
 {
@@ -20,7 +21,6 @@ namespace DAL
         }
 
         public DbSet<Question> Questions { set; get; }
-        public DbSet<QuestionType> QuestionTypes { set; get; }
         public DbSet<Student> Students { set; get; }
         public DbSet<StudentGroup> StudentGroups { set; get; }
         public DbSet<Teacher> Teachers { set; get; }
@@ -30,4 +30,5 @@ namespace DAL
         public DbSet<Answer> Answers { set; get; }
 
     }
+    
 }

@@ -16,7 +16,7 @@ namespace StudentExams.Entities
         [Key]
         public int Id { set; get; }
         public string Name { set; get; }
-        public IList<Question> Questions { set; get; }
+        public virtual IList<Question> Questions { set; get; }
 
     }
 }

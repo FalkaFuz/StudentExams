@@ -60,7 +60,6 @@
     <Compile Include="AppDbContext.cs" />
     <Compile Include="Entities\Answer.cs" />
     <Compile Include="Entities\Question.cs" />
-    <Compile Include="Entities\QuestionType.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\StudentGroup.cs" />
     <Compile Include="Entities\Teacher.cs" />
@@ -68,11 +67,49 @@
     <Compile Include="Entities\TestAccess.cs" />
     <Compile Include="Entities\ThematicArea.cs" />
     <Compile Include="IdentityEntities\AppUser.cs" />
+    <Compile Include="Migrations\201605301550245_InitialCreate.cs" />
+    <Compile Include="Migrations\201605301550245_InitialCreate.Designer.cs">
+      <DependentUpon>201605301550245_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606051533238_virtual.cs" />
+    <Compile Include="Migrations\201606051533238_virtual.Designer.cs">
+      <DependentUpon>201606051533238_virtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606051701338_db context.cs" />
+    <Compile Include="Migrations\201606051701338_db context.Designer.cs">
+      <DependentUpon>201606051701338_db context.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606051713238_required.cs" />
+    <Compile Include="Migrations\201606051713238_required.Designer.cs">
+      <DependentUpon>201606051713238_required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606051842497_stuff happened.cs" />
+    <Compile Include="Migrations\201606051842497_stuff happened.Designer.cs">
+      <DependentUpon>201606051842497_stuff happened.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605301550245_InitialCreate.resx">
+      <DependentUpon>201605301550245_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606051533238_virtual.resx">
+      <DependentUpon>201606051533238_virtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606051701338_db context.resx">
+      <DependentUpon>201606051701338_db context.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606051713238_required.resx">
+      <DependentUpon>201606051713238_required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606051842497_stuff happened.resx">
+      <DependentUpon>201606051842497_stuff happened.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
