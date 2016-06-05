@@ -31,7 +31,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Text,IsRight,Question")] AnswerDTO answerDTO)
+        public ActionResult Create([Bind(Include = "Id,Text,IsCorrect,Question")] AnswerDTO answerDTO)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +62,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Text,IsRight,Question")] AnswerDTO answerDTO)
+        public ActionResult Edit([Bind(Include = "Id,Text,IsCorrect,Question")] AnswerDTO answerDTO)
         {
             if (ModelState.IsValid)
             {

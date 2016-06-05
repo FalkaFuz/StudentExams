@@ -161,7 +161,7 @@ namespace Web.Controllers
                     UserName = model.UserName,
                     Email = model.Email,
                     Password = model.Password,
-                    SecretCode = model.SecretCode
+                    RegistrationCode = model.SecretCode
                 };
                 var facade = new UserFacade();
                 facade.Register(user);

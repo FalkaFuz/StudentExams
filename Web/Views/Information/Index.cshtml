@@ -3,6 +3,7 @@
 <script src="~/Scripts/jquery-1.10.2.js"></script>
 
 <h1>Welcome!</h1>
+<td>This is a system for testing students.</td>
 <div>
     @if (User.IsInRole("Teacher"))
     {
@@ -10,36 +11,55 @@
             You are using teacher account.
         </div>
     }
+    @if (User.IsInRole("Student"))
+    {
+        <div>
+            Thank you for choosing us.
+        </div>
+    }
 </div>
-<td>This is a system for testing students.</td>
+
 
 <br />
 <br />
 <br />
-
+@if (User.IsInRole("Teacher"))
+{
 <p>
     <h2>Students</h2>
-    <td>Please click @Html.ActionLink("HERE", "Students", "Information") to see and manipulate students data.</td>
+    <td>Please click @Html.ActionLink("HERE", "Students", "Information") to see data of registered students.</td>
 </p>
 
 <br />
 
 <p>
-    <h2>Thematic Areas</h2>
-    <td>Please click @Html.ActionLink("HERE", "Index", "ThematicArea") to see and manipulate students data.</td>
+    <h2>Student Groups</h2>
+    <td>Please click @Html.ActionLink("HERE", "Index", "StudentGroup") to see and manipulate student groups.</td>
 </p>
 
 <br />
 
+<p>
+    <h2>Thematic Areas, Questions, Answers</h2>
+    <td>Please click @Html.ActionLink("HERE", "Index", "ThematicArea") to see and manipulate thematic areas, questions and answers.</td>
 </p>
+}
+
+@if (User.IsInRole("Student"))
+{
+
+<br />
+
+<p>
     <h2>Tests</h2>
-    <td>Sorry, no tests available yet. Instead, you can look at this cute picture of stylish guinea pigs.</td>
+    <td>We are truly sorry, but no tests are available yet. Instead, you can look at this cute picture of stylish guinea pigs. Again. </td>
 </p>
+
 
 <div>
     @Html.Image("http://blogs.discovery.com/.a/6a00d8341bf67c53ef0120a6649f2c970b-pi", 400, 600)
 </div>
-
+}
 
 
 

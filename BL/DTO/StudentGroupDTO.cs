@@ -12,5 +12,6 @@ namespace BL.DTO
         public int Id { set; get; }
         public IList<Student> Students { set; get; }
         public string RegistrationCode { set; get; }
+        public string Name { set; get; }
     }
 }

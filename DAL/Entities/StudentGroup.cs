@@ -15,8 +15,11 @@ namespace StudentExams.Entities
         }
         [Key]
         public int Id { set; get; }
-        public IList<Student> Students { set; get; }
+        public virtual IList<Student> Students { set; get; }
         [Required]
         public string RegistrationCode { set; get; }
+        [Required]
+        public string Name { set; get; }
+
     }
 }

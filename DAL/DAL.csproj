@@ -87,6 +87,18 @@
     <Compile Include="Migrations\201606051842497_stuff happened.Designer.cs">
       <DependentUpon>201606051842497_stuff happened.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606052047214_name.cs" />
+    <Compile Include="Migrations\201606052047214_name.Designer.cs">
+      <DependentUpon>201606052047214_name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606052049543_cosi.cs" />
+    <Compile Include="Migrations\201606052049543_cosi.Designer.cs">
+      <DependentUpon>201606052049543_cosi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606052135368_lala.cs" />
+    <Compile Include="Migrations\201606052135368_lala.Designer.cs">
+      <DependentUpon>201606052135368_lala.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +121,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606051842497_stuff happened.resx">
       <DependentUpon>201606051842497_stuff happened.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606052047214_name.resx">
+      <DependentUpon>201606052047214_name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606052049543_cosi.resx">
+      <DependentUpon>201606052049543_cosi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606052135368_lala.resx">
+      <DependentUpon>201606052135368_lala.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

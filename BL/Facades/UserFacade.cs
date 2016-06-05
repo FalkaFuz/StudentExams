@@ -26,9 +26,9 @@ namespace BL.Facades
 
             var roleManager = new AppRoleManager(new AppRoleStore(new AppDbContext()));
 
-            if (user.SecretCode != null)
+            if (user.RegistrationCode != null)
             {
-                if (user.SecretCode.Equals("KNOWLEDGE"))
+                if (user.RegistrationCode.Equals("KNOWLEDGE"))
                 {
                     if (!roleManager.RoleExists("Teacher"))
                     {
@@ -52,8 +52,13 @@ namespace BL.Facades
         {
             var context = new AppDbContext();
             var studentRole = context.Roles.Where(x => x.Name.Equals("Student")).First();
+            if (studentRole == null) {
+                var list = new List<UserDTO>();
+                return list;
+            }
             return Mapping.Mapper.Map<List<AppUser>, List<UserDTO>>(context.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(studentRole.Id)).ToList());
         }
+        
 
         public ClaimsIdentity Login(string email, string password)
         {

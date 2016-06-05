@@ -15,7 +15,7 @@ namespace DAL.Entities
         [Required]
         public string Text { set; get; }
         [Required]
-        public Boolean IsRight { set; get; }
+        public Boolean IsCorrect { set; get; }
         [Required]
         public virtual Question Question { set; get; }
 

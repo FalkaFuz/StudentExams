@@ -201,6 +201,7 @@
     <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\StudentGroupController.cs" />
     <Compile Include="Controllers\ThematicAreaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -272,9 +273,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Information\CreateStudent.cshtml" />
     <Content Include="Views\Information\Students.cshtml" />
-    <Content Include="Views\Information\EditStudent.cshtml" />
     <Content Include="Views\Information\Index.cshtml" />
     <Content Include="Views\ThematicArea\Create.cshtml" />
     <Content Include="Views\ThematicArea\Delete.cshtml" />
@@ -288,6 +287,15 @@
     <Content Include="Views\Answer\Delete.cshtml" />
     <Content Include="Views\Answer\Edit.cshtml" />
     <Content Include="Views\Answer\Index.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\StudentGroup\Create.cshtml" />
+    <Content Include="Views\StudentGroup\Delete.cshtml" />
+    <Content Include="Views\StudentGroup\Edit.cshtml" />
+    <Content Include="Views\StudentGroup\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

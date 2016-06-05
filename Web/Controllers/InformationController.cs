@@ -29,6 +29,7 @@ namespace Web.Controllers
             return View(model);
         }
 
+
         [Authorize(Roles = "Teacher")]
         public ActionResult Questions()
         {
@@ -56,7 +57,7 @@ namespace Web.Controllers
             return View();
         }
         
-        [HttpPost]
+       /* [HttpPost]
         public ActionResult CreateStudent(StudentDTO student)
         {
             studentFacade.CreateStudent(student);
@@ -92,7 +93,7 @@ namespace Web.Controllers
 
             return RedirectToAction("Students");
         }
-       
+       */
     }
 
 }
